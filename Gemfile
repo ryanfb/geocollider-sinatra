@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'haml', "~> 4.0"
+gem 'haml', "~> 5.1"
 # gem 'geocollider', :path => '/Users/ryan/source/dc3/geocollider'
 gem 'geocollider', :git => 'https://github.com/isawnyu/geocollider.git'
 gem 'rack-attack'
