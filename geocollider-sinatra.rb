@@ -5,6 +5,7 @@ Encoding.default_internal = Encoding::UTF_8
 
 require 'sinatra/base'
 require 'sinatra/json'
+require 'sinatra/cors'
 require 'sinatra/multi_route'
 require 'tempfile'
 require 'haml'
@@ -59,6 +60,11 @@ end
 class GeocolliderSinatra < Sinatra::Base
   helpers Sinatra::Jsonp
   register Sinatra::MultiRoute
+  register Sinatra::Cors
+
+  set :allow_origin, "*"
+  set :allow_methods, "GET,HEAD,POST"
+  set :allow_headers, "Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token"
 
   LATITUDE_PID = 'http://www.w3.org/2003/01/geo/wgs84_pos#lat'
   LONGITUDE_PID = 'http://www.w3.org/2003/01/geo/wgs84_pos#long'
